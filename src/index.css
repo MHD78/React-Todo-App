@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .dark-inp{
+        @apply text-slate-400;
+        @apply bg-black/30;
+        @apply backdrop-blur-xl;
+    }
+    .dark-btn{
+        @apply text-white;
+        @apply font-semibold;
+        @apply bg-[#7f8c8d];
+        @apply hover:bg-[#606868]
+    }
+    .dark-card{
+        @apply text-[#2c3e50];
+        @apply bg-black/30;
+        @apply backdrop-blur-xl;
+    }
+    .dark-text{
+        @apply text-slate-400;
+    }
+}

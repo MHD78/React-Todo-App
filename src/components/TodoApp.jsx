@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import NavBar from "./NavBar";
+import SearchFilter from "./SearchFilter";
 import StatusFilter from "./StatusFilter";
 
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 
 
-const TodoApp = () => {
+const TodoApp = (props) => {
     const [todos, setTodos] = useState([]);
     const [Filter, setFilter] = useState([]);
     const [status, setStatus] = useState("All");
@@ -45,13 +47,25 @@ const TodoApp = () => {
         } else {
             setFilter(todos.filter(todo => todo.isComplete === false));
         }
+
+    }
+    const searchFilter = (value) => {
+        setFilter(Filter.filter(todo => todo.text.toLowerCase().includes(value.toLowerCase())));
+
     }
 
+
     return (
-        <div className="flex flex-col items-center m-auto w-11/12 sm:w-3/4 mt-20 p-10 bg-slate-200 rounded" >
-            <TodoForm func={todoHandler} />
-            <StatusFilter func={statusFilter} />
-            <TodoList todos={Filter} completeHandler={completeHandler} deleteHandler={deleteHandler} editHandler={editHandler} />
+        <div >
+            <NavBar Theme={props} />
+            <div className="flex flex-col items-center m-auto max-w-6xl w-11/12 sm:w-3/4 mt-20 p-10 bg-slate-200 dark:bg-black/10 dark:backdrop-blur-3xl rounded" >
+                <TodoForm func={todoHandler} />
+                <div className="h-fit w-full flex flex-col sm:flex-row justify-around items-center mt-6 gap-y-2" >
+                    <StatusFilter func={statusFilter} />
+                    <SearchFilter func={searchFilter} />
+                </div>
+                <TodoList todos={Filter} completeHandler={completeHandler} deleteHandler={deleteHandler} editHandler={editHandler} />
+            </div>
         </div>
     );
 }
