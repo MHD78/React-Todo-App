@@ -8,7 +8,7 @@ const TodoCard = ({ todo, onEdit, onComplete, onDelete }) => {
     const [edit, setEdit] = useState(false);
 
     return (
-        <div className="w-full max-w-7xl mx-auto relative  my-6  font-semibold dark:shadow-none dark:dark-card bg-slate-300 px-5 py-3 rounded-lg shadow-lg shadow-gray-400  " >
+        <div className="w-full max-w-7xl mx-auto relative  my-6  font-semibold dark:shadow-none dark:dark-card bg-slate-300 p-3 rounded-lg shadow-lg shadow-gray-400  " >
             <div className="dark:dark-text flex justify-between items-center gap-x-2">
                 <BiCheckCircle onClick={() => onComplete(todo.id)} className={`text-2xl cursor-pointer ${todo.isComplete ? "text-slate-400 dark:text-slate-600 " : "hover:text-green-800"}`} />
                 <span className="text-xs text-slate-500" >{todo.date}</span>

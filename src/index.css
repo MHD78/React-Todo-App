@@ -22,4 +22,14 @@
     .dark-text{
         @apply text-slate-400;
     }
+    .bright-filter{
+        @apply  w-full;
+        @apply  text-center;
+        @apply  transition-colors;
+        @apply  duration-300;
+        @apply  text-white;
+        @apply  cursor-pointer;
+        @apply  px-3;
+        @apply  py-1;
+    }
 }

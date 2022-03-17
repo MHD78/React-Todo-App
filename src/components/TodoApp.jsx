@@ -62,7 +62,6 @@ const TodoApp = (props) => {
                 <TodoForm func={todoHandler} />
                 <div className="h-fit w-full flex flex-col sm:flex-row justify-around items-center mt-6 gap-y-2" >
                     <StatusFilter func={statusFilter} />
-                    <SearchFilter func={searchFilter} />
                 </div>
                 <TodoList todos={Filter} completeHandler={completeHandler} deleteHandler={deleteHandler} editHandler={editHandler} />
             </div>

@@ -12,7 +12,7 @@ const TodoForm = (props) => {
     return (
         <form onSubmit={submitHandler} className="flex gap-x-2 w-full max-w-sm " >
             <input type={"text"} value={todo} onChange={e => setTodo(e.target.value)} className="px-2 w-3/4 rounded dark:dark-inp outline-slate-500" />
-            <button type="submit" className="px-4 py-1 sm:px-8 rounded text-white bg-slate-600 hover:bg-slate-700 dark:dark-btn " >Add</button>
+            <button type="submit" className="px-4 py-1 sm:px-8 rounded text-white bg-sky-500 hover:bg-sky-600 dark:dark-btn " >Add</button>
         </form>
     );
 }
