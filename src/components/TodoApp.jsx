@@ -6,6 +6,7 @@ import StatusFilter from "./StatusFilter";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 
+const userTodos = "key";
 
 const TodoApp = (props) => {
     const [todos, setTodos] = useState([]);
@@ -13,13 +14,20 @@ const TodoApp = (props) => {
     const [status, setStatus] = useState("All");
 
     useEffect(() => {
+        if (JSON.parse(localStorage.getItem(userTodos)).length !== 0) {
+            setTodos(JSON.parse(localStorage.getItem(userTodos)));
+        }
+
+    }, []);
+
+    useEffect(() => {
         setFilter(todos);
         statusFilter(status);
+        localStorage.setItem(userTodos, JSON.stringify(todos));
     }, [todos]);
 
     const todoHandler = (value, date) => {
         setTodos([...todos, { text: value, date, isComplete: false, id: Math.floor(Math.random() * 1000) }]);
-
         statusFilter(status);
     }
     const completeHandler = (id) => {

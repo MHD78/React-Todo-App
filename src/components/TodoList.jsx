@@ -14,7 +14,7 @@ const TodoList = (props) => {
     }
 
     const data = () => {
-        if (props.todos.length === 0) return <p>add some todos</p>
+        if (props.todos.length === 0) return <p className="dark:text-white mt-4" >add some todos</p>
         return (
             <div className="w-full sm:w-3/4" >
                 {

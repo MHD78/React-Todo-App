@@ -1,5 +1,5 @@
-import { BiMoon, BiSun } from "react-icons/bi";
-import { FaGithub } from "react-icons/fa";
+
+import { FaRegSun, FaRegMoon, FaGithub } from "react-icons/fa";
 
 const NavBar = (props) => {
 
@@ -10,9 +10,9 @@ const NavBar = (props) => {
                     <FaGithub className="animate-bounce" />
                     <a href="https://github.com/MHD78/React-Todo-App" target={"blank"} className="hover:text-gray-900 dark:hover:text-slate-300" >MHD78</a>
                 </li>
-                <li>ToDo App</li>
+                <li className="text-center" >ToDo App</li>
                 <li onClick={() => props.Theme.userTheme(props.Theme.currentTheme === "bright" ? "dark" : "bright")} className={"cursor-pointer"} >
-                    {props.Theme.currentTheme === "bright" ? <BiSun /> : <BiMoon />}
+                    {props.Theme.currentTheme === "bright" ? <FaRegSun /> : <FaRegMoon />}
                 </li>
             </ul>
         </nav>
