@@ -57,10 +57,10 @@ const TodoApp = (props) => {
         }
 
     }
-    const searchFilter = (value) => {
-        setFilter(Filter.filter(todo => todo.text.toLowerCase().includes(value.toLowerCase())));
+    // const searchFilter = (value) => {
+    //     setFilter(Filter.filter(todo => todo.text.toLowerCase().includes(value.toLowerCase())));
 
-    }
+    // }
 
 
     return (
