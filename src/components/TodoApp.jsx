@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
-import SearchFilter from "./SearchFilter";
 import StatusFilter from "./StatusFilter";
 
 import TodoForm from "./TodoForm";
@@ -22,7 +21,6 @@ const TodoApp = (props) => {
 
     useEffect(() => {
         setFilter(todos);
-        statusFilter(status);
         localStorage.setItem(userTodos, JSON.stringify(todos));
     }, [todos]);
 
